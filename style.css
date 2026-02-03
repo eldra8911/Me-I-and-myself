@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+    background: #0b0e14;
+    color: #eaeaea;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+a:hover ~ .cursor,
+button:hover ~ .cursor {
+    transform: scale(1.8);
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.ascii-name {
+    color: #8f00ff;
+    font-size: 0.75rem;
+    line-height: 1.1;
+    text-align: center;
+    white-space: pre;
+    text-shadow: 0 0 15px rgba(143, 0, 255, 0.4);
+    margin-bottom: 25px;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 0;
+    color: #8f00ff;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #8f00ff, transparent);
+    margin: 0 15px;
+}
+
+/* CANVAS */
+#network,
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+#matrix {
+    opacity: 0.15;
+}
+
+/* CURSOR */
+.cursor {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #8f00ff;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    box-shadow: 0 0 15px #8f00ff;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    opacity: 0.85;
+}
+
+.highlight {
+    color: #8f00ff;
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 15%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    color: #8f00ff;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #8f00ff66;
+}
+
+/* TIMELINE */
+.timeline {
+    list-style: none;
+}
+
+.timeline li {
+    margin: 15px 0;
+    padding-left: 20px;
+    border-left: 2px solid #8f00ff;
+}
+
+/* SKILLS */
+.skill {
+    margin: 20px 0;
+}
+
+.bar {
+    height: 10px;
+    background: #333;
+    border-radius: 5px;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #8f00ff, #00eaff);
+    border-radius: 5px;
+    transition: width 1.5s ease;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    opacity: 0.6;
+}
+/* ORIENTATION */
+.orientation-block {
+    margin: 40px 0;
+}
+
+.orientation-title {
+    color: #00eaff;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.orientation-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.orientation-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(143,0,255,0.3);
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.orientation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(143,0,255,0.1), transparent);
+    transition: 0.5s;
+}
+
+.orientation-card:hover::before {
+    left: 100%;
+}
+
+.orientation-card:hover {
+    transform: translateY(-8px);
+    border-color: #8f00ff;
+    box-shadow: 0 8px 25px rgba(143,0,255,0.3);
+}
+
+.orientation-card.past {
+    border-color: rgba(0,234,255,0.3);
+}
+
+.orientation-card.past:hover {
+    border-color: #00eaff;
+    box-shadow: 0 8px 25px rgba(0,234,255,0.3);
+}
+
+.orientation-card.future {
+    border-color: rgba(143,0,255,0.3);
+}
+
+.school-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #eaeaea;
+}
+
+.school-details {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    color: #00eaff;
+}
+
+/* LIENS CLIQUABLES POUR ORIENTATION */
+.orientation-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* BOUTON MUSIQUE */
+.music-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+#musicBtn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(143, 0, 255, 0.2);
+    border: 2px solid #8f00ff;
+    color: #8f00ff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(143, 0, 255, 0.3);
+}
+
+#musicBtn:hover {
+    background: rgba(143, 0, 255, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(143, 0, 255, 0.5);
+}
+
+#musicBtn svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* PLATFORMS */
+.platforms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.platform-card {
+    background: rgba(143, 0, 255, 0.05);
+    border: 2px solid rgba(143, 0, 255, 0.3);
+    padding: 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.4s ease;
+    display: block;
+}
+
+.platform-card:hover {
+    transform: translateY(-8px);
+    border-color: #8f00ff;
+    box-shadow: 0 8px 30px rgba(143, 0, 255, 0.4);
+    background: rgba(143, 0, 255, 0.1);
+}
+
+.platform-card h3 {
+    color: #8f00ff;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.platform-card p {
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+/* SECONDARY SCHOOLS */
+.secondary-schools {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    border: 1px solid rgba(143, 0, 255, 0.1);
+}
+
+.secondary-schools h3 {
+    color: #8f00ff;
+    opacity: 0.8;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.school-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.school-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(143, 0, 255, 0.05);
+    border: 1px solid rgba(143, 0, 255, 0.2);
+    border-radius: 6px;
+    color: #8f00ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.school-link:hover {
+    background: rgba(143, 0, 255, 0.15);
+    border-color: #8f00ff;
+    transform: translateY(-2px);
+}
