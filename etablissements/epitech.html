@@ -119,6 +119,24 @@
             margin-bottom: 10px;
         }
 
+        .visit-btn {
+            display: inline-block;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #8f00ff, #6600cc);
+            color: #eaeaea;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(143, 0, 255, 0.3);
+        }
+
+        .visit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(143, 0, 255, 0.5);
+        }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -135,12 +153,10 @@
     </div>
 
     <div class="content">
-        <div class="video-container">
-            <iframe 
-                src="https://www.epitech.eu/"
-                frameborder="0" 
-                allowfullscreen>
-            </iframe>
+        <div class="video-container" style="display: flex; align-items: center; justify-content: center; background: rgba(143, 0, 255, 0.05); border: 2px solid #8f00ff;">
+            <a href="https://www.epitech.eu/" target="_blank" class="visit-btn">
+                🌐 Visiter le site d'Epitech
+            </a>
         </div>
 
         <div class="info">
