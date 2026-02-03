@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Collège Martin Luther King - Léandre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            background: #0b0e14;
+            color: #eaeaea;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            padding: 40px 15%;
+            background: rgba(0, 234, 255, 0.05);
+            border-bottom: 2px solid #00eaff;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: #00eaff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            border: 2px solid #00eaff;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 234, 255, 0.1);
+            transform: translateX(-5px);
+        }
+
+        h1 {
+            color: #00eaff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            opacity: 0.7;
+            font-size: 1.1rem;
+        }
+
+        .content {
+            padding: 60px 15%;
+            flex: 1;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 234, 255, 0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .info {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #00eaff;
+            margin: 30px 0;
+        }
+
+        .info h2 {
+            color: #00eaff;
+            margin-bottom: 15px;
+        }
+
+        .info p {
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            opacity: 0.6;
+            background: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../index.html" class="back-btn">← Retour</a>
+        <h1>Collège Martin Luther King</h1>
+        <p class="subtitle">Ma formation initiale</p>
+    </div>
+
+    <div class="content">
+        <div class="video-container">
+            <iframe 
+                src="https://video.toutatice.fr/video/16553-portes-ouvertes-college-martin-luther-king/?is_iframe=true" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="info">
+            <h2>À propos</h2>
+            <p>
+                Le Collège Martin Luther King m'a permis de construire mes bases académiques 
+                et de découvrir ma passion pour l'informatique. C'est là que j'ai commencé 
+                à m'intéresser aux technologies et aux systèmes informatiques.
+            </p>
+        </div>
+
+        <div class="info">
+            <h2>Ce que j'ai appris</h2>
+            <p>
+                Au-delà des matières classiques, le collège m'a offert mes premières 
+                expériences avec la technologie et m'a donné l'envie d'approfondir mes 
+                connaissances en informatique, ce qui a orienté mon parcours vers la 
+                cybersécurité.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Projet SNT – Léandre – 2026</p>
+    </footer>
+</body>
+</html>

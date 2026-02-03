@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Guardia Cybersecurity School - Léandre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            background: #0b0e14;
+            color: #eaeaea;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            padding: 40px 15%;
+            background: rgba(143, 0, 255, 0.05);
+            border-bottom: 2px solid #8f00ff;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: #8f00ff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            border: 2px solid #8f00ff;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(143, 0, 255, 0.1);
+            transform: translateX(-5px);
+        }
+
+        h1 {
+            color: #8f00ff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            opacity: 0.7;
+            font-size: 1.1rem;
+        }
+
+        .content {
+            padding: 60px 15%;
+            flex: 1;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(143, 0, 255, 0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .info {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #8f00ff;
+            margin: 30px 0;
+        }
+
+        .info h2 {
+            color: #8f00ff;
+            margin-bottom: 15px;
+        }
+
+        .info p {
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .highlight {
+            color: #8f00ff;
+            font-weight: 600;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature {
+            background: rgba(143, 0, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(143, 0, 255, 0.2);
+        }
+
+        .feature h3 {
+            color: #8f00ff;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            opacity: 0.6;
+            background: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../index.html" class="back-btn">← Retour</a>
+        <h1>Guardia Cybersecurity School</h1>
+        <p class="subtitle">École de cybersécurité</p>
+    </div>
+
+    <div class="content">
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/r5yZ8nQ3E5w" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="info">
+            <h2>1ère école post-bac dédiée à la cybersécurité</h2>
+            <p>
+                Guardia Cybersecurity School est <span class="highlight">entièrement dédiée à la 
+                cybersécurité</span>, accessible post-bac et hors Parcoursup. L'école est pensée 
+                par des experts de la cybersécurité et les entreprises du secteur pour former 
+                des professionnels opérationnels dès l'obtention de leur diplôme.
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>🎓 Formations</h3>
+                <p>Bachelor (Bac+3) et MSc Expert (Bac+5)</p>
+            </div>
+            <div class="feature">
+                <h3>💼 15 projets/an</h3>
+                <p>Pédagogie 100% par projets</p>
+            </div>
+            <div class="feature">
+                <h3>🏢 Alternance</h3>
+                <p>Dès la 3ème année</p>
+            </div>
+            <div class="feature">
+                <h3>🔧 Environnement High-tech</h3>
+                <p>Labs et équipements pros</p>
+            </div>
+        </div>
+
+        <div class="info">
+            <h2>Pédagogie par projets</h2>
+            <p>
+                Guardia propose une <span class="highlight">pédagogie active</span> basée sur 
+                la réalisation de projets concrets encadrés par des professionnels : détection 
+                de vulnérabilités, gestion de crises cyber, développement d'outils de sécurité... 
+                Les étudiants travaillent en équipe, comme en entreprise, ce qui développe 
+                autant les compétences techniques que le travail collaboratif.
+            </p>
+        </div>
+
+        <div class="info">
+            <h2>Pourquoi Guardia ?</h2>
+            <p>
+                Guardia se concentre exclusivement sur la cybersécurité avec une approche très 
+                pratique. L'école est soutenue par plus de 50 entreprises du secteur, ce qui 
+                garantit une excellente employabilité. Le modèle sans Parcoursup et l'alternance 
+                dès la 3ème année permettent de se former tout en gagnant en expérience. Les campus 
+                à Paris, Lyon et Bordeaux offrent un cadre moderne et connecté à l'écosystème cyber.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Projet SNT – Léandre – 2026</p>
+    </footer>
+</body>
+</html>
