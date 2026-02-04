@@ -116,7 +116,7 @@ setInterval(drawMatrix, 50);
    MUSIQUE D'AMBIANCE
 ===================== */
 // Création de l'audio avec une musique d'ambiance cyberpunk
-const audio = new Audio('ambient.mp3'); // Ambient cyberpunk music
+const audio = new Audio('./ambient.mp3'); // Ambient cyberpunk music
 audio.loop = true;
 audio.volume = 0.3;
 
@@ -137,3 +137,4 @@ musicBtn.addEventListener('click', () => {
     }
     isPlaying = !isPlaying;
 });
+
