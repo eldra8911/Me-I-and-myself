@@ -7,6 +7,10 @@
     font-family: 'JetBrains Mono', monospace;
 }
 
+canvas {
+    pointer-events: none;
+}
+
 body {
     background: #0b0e14;
     color: #eaeaea;
