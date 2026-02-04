@@ -120,27 +120,18 @@ const audio = new Audio('./ambient.mp3'); // Ambient cyberpunk music
 audio.loop = true;
 audio.volume = 0.3;
 
-document.addEventListener('click', () => {
-    if (!isPlaying) return;
-    audio.play().catch(() => {});
-}, { once: true });
-
 const musicBtn = document.getElementById('musicBtn');
 const iconOn = document.querySelector('.icon-sound-on');
 const iconOff = document.querySelector('.icon-sound-off');
-let isPlaying = true;
+let isPlaying = false;
 
 musicBtn.addEventListener('click', () => {
-    if (isPlaying) {
-        audio.pause();
-        iconOn.style.display = 'block';
-        iconOff.style.display = 'none';
-    } else {
-        audio.play().catch(() => {});
-        iconOn.style.display = 'none';
-        iconOff.style.display = 'block';
-    }
-    isPlaying = !isPlaying;
+    audio.muted = !audio.muted;
+
+    iconOn.style.display = audio.muted ? 'block' : 'none';
+    iconOff.style.display = audio.muted ? 'none' : 'block';
 });
 
-
+document.addEventListener('click', () => {
+    audio.play().catch(() => {});
+}, { once: true });
