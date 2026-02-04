@@ -110,12 +110,13 @@ function drawMatrix() {
     }
 }
 
+
 setInterval(drawMatrix, 50);
 /* =====================
    MUSIQUE D'AMBIANCE
 ===================== */
 // Création de l'audio avec une musique d'ambiance cyberpunk
-const audio = new Audio('https://cdn.pixabay.com/download/audio/2022/03/10/audio_4037f88cb9.mp3'); // Ambient cyberpunk music
+const audio = new Audio('ambient.mp3'); // Ambient cyberpunk music
 audio.loop = true;
 audio.volume = 0.3;
 
@@ -130,7 +131,7 @@ musicBtn.addEventListener('click', () => {
         iconOn.style.display = 'block';
         iconOff.style.display = 'none';
     } else {
-        audio.play();
+        audio.play().catch(() => {});
         iconOn.style.display = 'none';
         iconOff.style.display = 'block';
     }
