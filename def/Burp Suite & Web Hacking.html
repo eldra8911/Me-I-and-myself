@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>École 2600 - Léandre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            background: #0b0e14;
+            color: #eaeaea;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            padding: 40px 15%;
+            background: rgba(143, 0, 255, 0.05);
+            border-bottom: 2px solid #8f00ff;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: #8f00ff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            border: 2px solid #8f00ff;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(143, 0, 255, 0.1);
+            transform: translateX(-5px);
+        }
+
+        h1 {
+            color: #8f00ff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            opacity: 0.7;
+            font-size: 1.1rem;
+        }
+
+        .content {
+            padding: 60px 15%;
+            flex: 1;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(143, 0, 255, 0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .info {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #8f00ff;
+            margin: 30px 0;
+        }
+
+        .info h2 {
+            color: #8f00ff;
+            margin-bottom: 15px;
+        }
+
+        .info p {
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .highlight {
+            color: #8f00ff;
+            font-weight: 600;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature {
+            background: rgba(143, 0, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(143, 0, 255, 0.2);
+        }
+
+        .feature h3 {
+            color: #8f00ff;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .visit-btn {
+            display: inline-block;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #8f00ff, #6600cc);
+            color: #eaeaea;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(143, 0, 255, 0.3);
+        }
+
+        .visit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(143, 0, 255, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            opacity: 0.6;
+            background: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../index.html" class="back-btn">← Retour</a>
+        <h1>Burp Suite & Web Hacking</h1>
+        <p class="subtitle">Mais qu'est ce que c'est ???</p>
+    </div>
+
+    <div class="content">
+
+        <div class="info">
+            <h2>Burp Suite & Web Hacking : Explication complète</h2>
+            <p>
+				### 🔎 <span class="highlight">Qu’est-ce que Burp Suite ?</span>
+
+				**Burp Suite** est une plateforme professionnelle de test de sécurité des applications web développée par PortSwigger.
+				Elle est utilisée par les pentesters, chercheurs en cybersécurité et bug bounty hunters pour analyser, manipuler et sécuriser des applications web.
+
+				C’est un outil central dans le **web hacking**, car il permet d’intercepter, modifier et analyser le trafic HTTP/HTTPS entre un navigateur et un serveur.
+
+				---
+
+				## 🌐 <span class="highlight">Le Web Hacking, c’est quoi ?</span>
+
+				Le **web hacking** (ou test d’intrusion web) consiste à analyser la sécurité d’une application web en simulant le comportement d’un attaquant.
+
+				Contrairement au hacking “criminel”, le web hacking légal (pentest) a pour but :
+
+				* Identifier des vulnérabilités
+				* Évaluer les risques
+				* Aider à corriger les failles
+				* Renforcer la sécurité
+
+				Les cibles typiques :
+
+				* Sites e-commerce
+				* Applications SaaS
+				* APIs
+				* Applications internes d’entreprise
+				* Applications mobiles connectées à des APIs web
+
+				---
+
+				# ⚙️ <span class="highlight">Comment fonctionne Burp Suite ?</span>
+
+				Burp agit comme un **proxy interceptant** :
+
+				Navigateur ⇄ **Burp Suite** ⇄ Serveur Web
+
+				Cela signifie que :
+
+				* Toutes les requêtes HTTP passent par Burp
+				* Toutes les réponses du serveur peuvent être analysées
+
+				---
+
+				## 🧰 <span class="highlight">Les principaux modules de Burp Suite</span>
+
+				### 1. Proxy
+
+				Permet d’intercepter les requêtes en temps réel.
+				On peut :
+
+				* Modifier des paramètres
+				* Changer des cookies
+				* Tester des injections
+				* Manipuler des headers
+
+				Exemple : modifier un paramètre `isAdmin=false` en `isAdmin=true`.
+
+				---
+
+				### 2. Repeater
+
+				Permet de rejouer une requête autant de fois que nécessaire en la modifiant.
+
+				Idéal pour :
+
+				* Tester des injections SQL
+				* Tester des failles XSS
+				* Manipuler des tokens
+
+				---
+
+				### 3. Intruder
+
+				Automatise l’envoi massif de requêtes avec des payloads.
+
+				Utilisé pour :
+
+				* Brute force de mots de passe
+				* Fuzzing
+				* Test de paramètres cachés
+
+				---
+
+				### 4. Scanner (version Pro)
+
+				Analyse automatiquement l’application pour détecter :
+
+				* SQL Injection
+				* XSS
+				* CSRF
+				* SSRF
+				* IDOR
+				* Vulnérabilités logiques
+
+				---
+
+				### 5. Decoder & Comparer
+
+				Outils pratiques pour :
+
+				* Encoder/décoder en Base64
+				* Comparer deux requêtes
+				* Analyser des tokens JWT
+
+				---
+
+				# 🔥 <span class="highlight">Types de vulnérabilités détectées avec Burp</span>
+
+				### 🧨 Injection SQL
+
+				Manipulation des requêtes SQL via les entrées utilisateur.
+
+				### 🧬 XSS (Cross-Site Scripting)
+
+				Injection de JavaScript malveillant.
+
+				### 🔐 CSRF
+
+				Exécution d’actions sans consentement utilisateur.
+
+				### 🗂️ IDOR
+
+				Accès non autorisé à des ressources via modification d’identifiants.
+
+				### 🔄 SSRF
+
+				Forcer le serveur à effectuer des requêtes internes.
+
+				### 🧠 Failles logiques
+
+				Erreurs dans la logique métier (ex : payer 1€ au lieu de 100€).
+
+				---
+
+				# 🎯 <span class="highlight">Pourquoi Burp est si puissant ?</span>
+
+				* Contrôle total sur les requêtes
+				* Compréhension fine du fonctionnement HTTP
+				* Automatisation avancée
+				* Intégration d’extensions
+				* Standard de l’industrie en pentest
+
+				Burp ne “hacke” pas tout seul :
+				Il donne le contrôle technique. L’intelligence vient de l’utilisateur.
+
+				---
+
+				---
+
+				# <span class="highlight">Pourquoi faire du Web Hacking ?</span>
+
+				## 🛡️ 1. Pour protéger les systèmes
+
+				Les entreprises dépendent du web pour :
+
+				* Vendre
+				* Stocker des données
+				* Gérer des clients
+				* Gérer des paiements
+
+				Une faille peut entraîner :
+
+				* Vol de données
+				* Perte financière
+				* Atteinte à la réputation
+				* Sanctions légales (RGPD, etc.)
+
+				Faire du web hacking légal permet de prévenir ces risques.
+
+				---
+
+				## 💼 2. Pour une carrière en cybersécurité
+
+				La cybersécurité est un domaine :
+
+				* En forte demande
+				* Bien rémunéré
+				* International
+				* Stable
+
+				Métiers liés :
+
+				* Pentester
+				* Bug bounty hunter
+				* Analyste sécurité
+				* Red teamer
+				* Consultant cybersécurité
+
+				Les compétences en web hacking sont parmi les plus recherchées.
+
+				---
+
+				## 🧠 3. Pour comprendre comment fonctionne Internet
+
+				Le web hacking force à comprendre :
+
+				* HTTP/HTTPS
+				* Cookies
+				* Sessions
+				* Authentification
+				* APIs
+				* Architecture client-serveur
+
+				Cela développe une compréhension technique très avancée.
+
+				---
+
+				## 💰 4. Pour gagner de l’argent (bug bounty)
+
+				Des plateformes récompensent la découverte de failles :
+
+				* De quelques centaines à plusieurs milliers d’euros
+				* Certaines failles critiques peuvent dépasser 10 000€
+
+				Mais cela demande :
+
+				* Compétence
+				* Méthodologie
+				* Éthique
+
+				---
+
+				## ⚖️ 5. Pour apprendre l’éthique numérique
+
+				Le web hacking enseigne :
+
+				* La responsabilité
+				* Le respect des systèmes
+				* Les limites légales
+				* L’importance de la sécurité
+
+				Sans cadre légal, cela devient du cybercrime.
+				Avec cadre légal, cela devient une compétence précieuse.
+
+				---
+
+				# 🚨 <span class="highlight">Important : cadre légal</span>
+
+				Faire du web hacking **sans autorisation** est illégal.
+
+				Toujours :
+
+				* Tester des environnements personnels
+				* Utiliser des plateformes de lab (ex : environnements vulnérables dédiés)
+				* Participer à des programmes bug bounty officiels
+
+				---
+
+				# 🧩 <span class="highlight">Conclusion</span>
+
+				**Burp Suite** est un outil central du web hacking.
+				Le web hacking est une discipline technique exigeante qui combine :
+
+				* Réseau
+				* Développement web
+				* Logique
+				* Sécurité
+				* Analyse
+
+				Ce n’est pas “pirater pour détruire”.
+				C’est comprendre pour protéger.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Projet SNT – Léandre – 2026</p>
+    </footer>
+</body>
+</html>
