@@ -157,7 +157,318 @@
         <div class="info">
             <h2>Capture The Flag (CTF) : Explication complète</h2>
             <p>
-              
+                ## 🏁 Qu’est-ce qu’un CTF ?
+                
+                Un **Capture The Flag (CTF)** en cybersécurité est une compétition où les participants doivent résoudre des défis techniques pour trouver un “flag” (une preuve, souvent sous forme de chaîne de caractères).
+                
+                Un flag ressemble souvent à :
+                
+                ```
+                flag{exemple_de_solution}
+                ```
+                
+                Les CTF sont utilisés pour :
+                
+                * Apprendre la cybersécurité de manière pratique
+                * Tester ses compétences
+                * S'entraîner au hacking éthique
+                * Recruter des talents
+                
+                ---
+                
+                ## 🧠 Pourquoi ça s’appelle “Capture The Flag” ?
+                
+                Le nom vient d’un jeu traditionnel où deux équipes tentent de capturer le drapeau adverse.
+                En cybersécurité, le “drapeau” est une preuve que tu as exploité une vulnérabilité ou résolu un défi.
+                
+                ---
+                
+                # 🎮 Les différents types de CTF
+                
+                ## 1️⃣ Jeopardy-style CTF (le plus courant)
+                
+                Les participants choisissent des défis dans différentes catégories :
+                
+                * Web
+                * Crypto
+                * Reverse engineering
+                * Forensics
+                * Pwn (exploitation binaire)
+                * OSINT
+                * Steganography
+                
+                Chaque défi donne un nombre de points selon sa difficulté.
+                
+                ---
+                
+                ## 2️⃣ Attack & Defense CTF
+                
+                Deux équipes :
+                
+                * Attaquent les services adverses
+                * Défendent leurs propres services
+                
+                Plus réaliste, plus complexe, souvent utilisé dans les compétitions universitaires ou internationales.
+                
+                ---
+                
+                ## 3️⃣ King of the Hill
+                
+                Un système vulnérable est mis à disposition.
+                Le but : garder le contrôle le plus longtemps possible.
+                
+                ---
+                
+                # 🧩 Les principales catégories de défis
+                
+                ---
+                
+                ## 🌐 Web
+                
+                ![Image](https://www.researchgate.net/publication/346428684/figure/fig3/AS%3A962758556282881%401606550935417/The-main-interface-of-the-CTFd-in-combination-with-the-CTF-challenges.ppm)
+                
+                ![Image](https://portswigger.net/burp/documentation/desktop/images/getting-started/quick-start-pro-intercepted-request.png)
+                
+                ![Image](https://cdn.acunetix.com/wp_content/uploads/2018/01/image6-910x257.png)
+                
+                ![Image](https://cdn.acunetix.com/wp_content/uploads/2012/10/image01.png)
+                
+                Défis liés aux applications web :
+                
+                * SQL Injection
+                * XSS
+                * Auth bypass
+                * IDOR
+                * SSRF
+                
+                Les outils souvent utilisés :
+                
+                * Burp Suite
+                * Navigateur + DevTools
+                * Scripts personnalisés
+                
+                ---
+                
+                ## 🔐 Cryptographie
+                
+                ![Image](https://miro.medium.com/v2/resize%3Afit%3A1106/1%2A2D1B9vPZc8UOi__vm6GMsw.png)
+                
+                ![Image](https://hereket.com/posts/rsa-algorithm/rsa-formula-split.png)
+                
+                ![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/1280px-Caesar_cipher_left_shift_of_3.svg.png)
+                
+                ![Image](https://miro.medium.com/0%2A0DyPjsPqkQsSUtrN.png)
+                
+                Défis basés sur :
+                
+                * Chiffrement RSA
+                * AES mal implémenté
+                * Chiffres classiques (César, Vigenère)
+                * Hash cracking
+                
+                Objectif : casser ou contourner un système cryptographique.
+                
+                ---
+                
+                ## 🧬 Reverse Engineering
+                
+                ![Image](https://www.researchgate.net/publication/270960218/figure/fig3/AS%3A816907917737995%401571777433656/Screenshot-of-IDA-Pro-disassembler-still-features-a-searchable-disassembly-with-separate.jpg)
+                
+                ![Image](https://www.sei.cmu.edu/media/images/figure1_ghirhorntools_11012021.max-1280x720.format-webp.webp)
+                
+                ![Image](https://hex-rays.com/hs-fs/hubfs/theme-assets/images/ida-pro-visual-7.png?name=ida-pro-visual-7.png\&width=1024)
+                
+                ![Image](https://hex-rays.com/hs-fs/hubfs/Imported_Blog_Media/disopt_text-Jun-18-2024-08-58-56-6418-AM.png?height=488\&name=disopt_text-Jun-18-2024-08-58-56-6418-AM.png\&width=584)
+                
+                Analyse d’un programme compilé pour :
+                
+                * Comprendre son fonctionnement
+                * Trouver un mot de passe caché
+                * Découvrir une backdoor
+                
+                Outils populaires :
+                
+                * Ghidra
+                * IDA Pro
+                
+                ---
+                
+                ## 🧾 Forensics
+                
+                ![Image](https://www.sirchie.com/media/catalog/product/cache/953baf6f387fbf7720cf9d81f7c81ec8/f/x/fxe350a_11-16__1.jpg)
+                
+                ![Image](https://www.wireshark.org/docs/wsug_html_chunked/images/ws-packet-selected.png)
+                
+                ![Image](https://dataedo.com/asset/img/banners/kb/data-glossary/metadata_v2.png)
+                
+                ![Image](https://www.datocms-assets.com/14946/1721639960-cornerstone-discovery_2021_infographic_revised-1.png?auto=format\&fit=max\&w=864)
+                
+                Analyse de :
+                
+                * Fichiers suspects
+                * Trafic réseau
+                * Images avec données cachées
+                * Logs systèmes
+                
+                On cherche souvent un flag caché dans des métadonnées ou un dump mémoire.
+                
+                ---
+                
+                ## 💣 Pwn (Binary Exploitation)
+                
+                ![Image](https://miro.medium.com/1%2AsrairTVcbwgy9pvT9zq7rg.jpeg)
+                
+                ![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Stack_Overflow_2.png/250px-Stack_Overflow_2.png)
+                
+                ![Image](https://s3.eu-central-1.amazonaws.com/htb-ctf-prod-public-storage/packs/FQbfWzODux34u9H2pLzeAxXutRXLRuvzJmMJifXX.svg)
+                
+                ![Image](https://kam.mff.cuni.cz/pitfalls/images/gdb.png)
+                
+                Défis avancés :
+                
+                * Buffer overflow
+                * Exploitation mémoire
+                * ROP chains
+                * Bypass protections
+                
+                Très technique, souvent réservé aux niveaux intermédiaires/avancés.
+                
+                ---
+                
+                # 🏆 Grandes compétitions CTF
+                
+                * DEF CON CTF
+                * Hack The Box
+                * Root-Me
+                * picoCTF
+                
+                Ces plateformes permettent de s'entraîner légalement.
+                
+                ---
+                
+                # 📈 Ce que développe un CTF
+                
+                Un CTF développe :
+                
+                * Logique
+                * Persévérance
+                * Esprit analytique
+                * Travail en équipe
+                * Créativité technique
+                
+                Contrairement aux cours théoriques, tu apprends en résolvant des problèmes concrets.
+                
+                ---
+                
+                ---
+                
+                # 2️⃣ Pourquoi faire des CTF ?
+                
+                ## 🧠 1. Apprentissage accéléré
+                
+                Un CTF te force à :
+                
+                * Chercher
+                * Tester
+                * Te tromper
+                * Comprendre en profondeur
+                
+                L’apprentissage est beaucoup plus rapide que la théorie seule.
+                
+                ---
+                
+                ## 💼 2. Booster son CV
+                
+                Les recruteurs cybersécurité apprécient fortement :
+                
+                * Participation à des CTF
+                * Classements
+                * Writeups publiés
+                * Projets personnels
+                
+                Dans certains cas, des recruteurs surveillent directement les compétitions.
+                
+                ---
+                
+                ## 🛡️ 3. Se préparer au monde réel
+                
+                Les vulnérabilités en CTF sont inspirées de vraies failles.
+                
+                Cela prépare à :
+                
+                * Pentest
+                * Red team
+                * Bug bounty
+                * Audit sécurité
+                
+                ---
+                
+                ## 💰 4. Gagner des prix
+                
+                Certaines compétitions offrent :
+                
+                * Cash prize
+                * Matériel
+                * Opportunités d’emploi
+                * Invitations à des conférences
+                
+                ---
+                
+                ## 👥 5. Réseau & communauté
+                
+                Les CTF permettent de :
+                
+                * Rencontrer d’autres passionnés
+                * Former des équipes
+                * Apprendre des meilleurs
+                * Partager des techniques
+                
+                La communauté cybersécurité est très collaborative.
+                
+                ---
+                
+                ## 🚀 6. Construire une mentalité offensive
+                
+                Faire des CTF développe :
+                
+                * La capacité à penser comme un attaquant
+                * La compréhension des erreurs humaines
+                * L’analyse des systèmes complexes
+                
+                C’est une école de rigueur.
+                
+                ---
+                
+                # ⚖️ Important : cadre légal
+                
+                Les CTF sont des environnements :
+                
+                * Autorisés
+                * Encadrés
+                * Conçus pour être attaqués
+                
+                Ne jamais tester des systèmes réels sans autorisation.
+                
+                ---
+                
+                # 🧩 Conclusion
+                
+                Les **CTF** sont l’un des meilleurs moyens d’apprendre la cybersécurité de manière :
+                
+                * Ludique
+                * Structurée
+                * Technique
+                * Progressive
+                
+                Ils combinent :
+                
+                * Web hacking
+                * Cryptographie
+                * Reverse engineering
+                * Analyse système
+                * Exploitation
+                
+                C’est un terrain d’entraînement sûr pour devenir un expert.
             </p>
         </div>
     </div>
@@ -167,3 +478,4 @@
     </footer>
 </body>
 </html>
+
